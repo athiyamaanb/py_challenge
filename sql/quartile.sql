@@ -57,3 +57,16 @@ VALUES
   ('83248582', '765', '009');
 
 
+
+-- Answer
+select
+    animal_id,
+    weight_lbs,
+    tile,
+    dense_rank() over(partition by tile order by weight_lbs) rk
+from (
+    select
+        animal_id,
+        weight_lbs,
+        ntile(4) over(order by animal_id) as tile
+    from animal_weights) t;

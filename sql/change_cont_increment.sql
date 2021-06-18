@@ -46,3 +46,13 @@ VALUES
 ('3','Emerson'),
 ('4','Green'),
 ('5','James');
+
+
+-- Answer
+select id, student,
+	case when mod(id, 2)<>0 and id<>5  then id+1
+         when mod(id, 2)<>0 and id=5 then id
+    else id-1 end as new_id
+from students
+order by new_id
+
