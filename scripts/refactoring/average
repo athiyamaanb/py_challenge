@@ -1,0 +1,6 @@
+numbers_list = [10, 20, 30, 40, 50]
+#numbers_list
+average = sum(numbers_list)/len(numbers_list)
+print(average)
+#for i in numbers_list:
+    #sum(i)
