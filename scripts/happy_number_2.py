@@ -16,3 +16,9 @@ class Solution:
 
 s = Solution()
 print(s.isHappy(7))
+
+
+print(7/2)
+print(7//2)
+print(7%2)
+

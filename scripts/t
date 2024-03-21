@@ -1,0 +1,31 @@
+Spark Memory Configurations
+1. spark.executor.memoryOverhead
+2. spark.executor.memory
+3. spark.memory.fraction
+4. spark.memory.storageFraction
+5. spark.executor.cores
+6. spark.memory.offHeap.enabled
+7. spark.memory.offHeap.size
+8. spark.executor.pyspark.memory
+
+
+Spark Adaptive Query Execution offers following features
+1. Dynamically coalescing shuffle partitions
+2. Dynamically switching join strategies
+3. Dynamically optimizing skew joins
+
+spark.sql.adaptive.enabled = true
+2. spark.sql.adaptive.skewJoin.enabled = true
+3. spark.sql.adaptive.skewJoin.skewedPartitionFactor = 5
+4. spark.sql.adaptive.skewJoin.skewedPartitionThresholdInBytes = 256MB
+
+spark.sql.adaptive.enabled = true
+spark.sql.adaptive.localShuffleReader.enabled = true
+broadcast the small table
+
+
+
+spark.sql.adaptive.enabled = true
+spark.sql.adaptive.skewJoin.enabled - true
+spark.sql.adaptive.skewJoin.skewedPartitionFactor = 5
+spark.sql.adaptive.skewJoin.skewedPartitionThresholdInBytes = 256MB
