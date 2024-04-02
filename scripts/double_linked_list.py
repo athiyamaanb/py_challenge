@@ -57,7 +57,7 @@ class double_linked_list:
         for i in range(1, self.length+1):
             if i == index:
                 print(temp.value)
-                return
+                return temp
             temp = temp.next
 
     def set(self, index, value):
@@ -66,6 +66,32 @@ class double_linked_list:
             if i == index:
                 temp.value = value
             temp = temp.next
+
+    def insert(self, index, value):
+        new_node = Node(value)
+        temp = self.head
+        for i in range(1, self.length+1):
+            if i == index:
+                before = temp.prev
+                after = temp
+
+                before.next = new_node
+                new_node.prev = before
+
+                after.prev = new_node
+                new_node.next = after
+
+                self.length += 1
+                return
+            temp = temp.next
+
+    def remove(self, index):
+        temp = self.get(index)
+        temp.prev.next = temp.next
+        temp.next.prev = temp.prev
+        temp.next = None
+        temp.prev = None
+        self.length -= 1
 
 
 dll = double_linked_list(11)
@@ -83,9 +109,13 @@ dll.prepend(-11)
 dll.pop_first()
 
 
-dll.get(2)
+# dll.get(2)
 
-dll.set(2, 2222)
+# dll.set(2, 2222)
+
+dll.insert(2,1000)
 dll.print()
-dll.print_reverse()
-dll.get(2)
+dll.remove(2)
+dll.print()
+# dll.print_reverse()
+# dll.get(2)
