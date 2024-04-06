@@ -1,15 +1,22 @@
 
 
-def common_prefix(words):
+def common_prefix(strs):
     prefix = ""
-    for i in range(len(words[0])):
-        for s in words:
-            if len(s) == i or words[0][i] != s[i]:
+
+    if len(strs) == 1:
+        return strs[0]
+
+    for i in range(len(strs[0])):
+
+        for s in strs:
+            if len(s) == i or s[i] != strs[0][i]:
                 return prefix
-        prefix += words[0][i]
+        prefix += strs[0][i]
+    return prefix
 
 
 
 words = ["bella", "label", "roller"]
 words = ["flower","flow","flight"]
+words = ["flower","flower","flower","flower"]
 print(common_prefix(words))
