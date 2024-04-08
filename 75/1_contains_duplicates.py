@@ -4,11 +4,11 @@ from typing import List
 def containsDuplicate(nums: List[int]) -> bool:
     visited = {}
 
-    for i in range(len(nums)):
-        if nums[i] in visited:
+    for i in nums:
+        if i in visited:
             return True
         else:
-            visited[nums[i]] = True
+            visited[i] = True
     return False
 
 nums = [1, 2, 3, 1]
